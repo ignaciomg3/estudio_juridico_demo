@@ -1,0 +1,367 @@
+Quiero que desarrolles el front-end completo de una aplicación web moderna para un estudio jurídico, orientada a una demo comercial para clientes.
+El objetivo NO es construir toda la lógica real del negocio, sino crear una interfaz profesional, clara y visualmente sólida que simule un sistema funcional.
+
+La aplicación debe transmitir:
+
+profesionalismo,
+organización,
+seguridad,
+modernidad,
+facilidad de uso.
+Objetivo del sistema
+
+Construir una SPA (Single Page Application) responsive para escritorio y tablet, enfocada en la gestión jurídica.
+
+Debe parecer un sistema real utilizado diariamente por abogados y administrativos.
+
+La demo debe incluir:
+
+navegación funcional,
+pantallas realistas,
+tablas con datos mock,
+formularios visuales,
+dashboards,
+estados de expedientes,
+métricas,
+experiencia UX moderna.
+Stack tecnológico
+
+Usar:
+
+React
+Vite
+TailwindCSS
+React Router
+Lucide Icons
+Framer Motion (animaciones suaves)
+shadcn/ui para componentes
+
+Buenas prácticas:
+
+componentes reutilizables,
+estructura escalable,
+código limpio,
+naming consistente,
+diseño modular.
+
+NO usar Bootstrap.
+
+Diseño visual
+Estilo
+
+Diseño tipo SaaS premium / ERP profesional.
+
+Inspiraciones:
+
+Notion
+Stripe Dashboard
+Linear
+Clerk
+HubSpot
+sistemas jurídicos corporativos
+Paleta
+
+Preferentemente:
+
+azul oscuro,
+gris grafito,
+blanco,
+pequeños detalles en dorado o cyan.
+Sensación visual
+
+Debe transmitir:
+
+confianza,
+legalidad,
+orden,
+precisión.
+Layout principal
+
+La aplicación debe tener:
+
+Sidebar lateral izquierda
+
+Con iconos y navegación.
+
+Secciones:
+
+Dashboard
+Casos
+Clientes
+Agenda
+Documentos
+Usuarios
+Facturación
+Notificaciones
+Reportes
+Configuración
+Header superior
+
+Debe incluir:
+
+buscador global,
+avatar del usuario,
+nombre del estudio,
+notificaciones,
+breadcrumb.
+Área central dinámica
+
+Donde cambia el contenido según la sección.
+
+Pantallas requeridas
+1. Dashboard
+
+Debe contener:
+
+Cards KPI
+
+Ejemplos:
+
+Casos activos
+Audiencias esta semana
+Clientes activos
+Facturas pendientes
+Casos cerrados
+Gráficos
+
+Agregar:
+
+casos por estado,
+ingresos mensuales,
+actividad semanal.
+Tabla de actividad reciente
+
+Ejemplo:
+
+“Caso Pérez actualizado”
+“Nueva audiencia programada”
+“Documento agregado”
+2. Gestión de Casos
+
+Tabla moderna con:
+
+número de expediente,
+cliente,
+tipo de causa,
+abogado asignado,
+estado,
+fecha,
+prioridad.
+
+Estados visuales:
+
+Activo
+En revisión
+Urgente
+Cerrado
+
+Debe incluir:
+
+filtros,
+búsqueda,
+paginación visual,
+botón “Nuevo Caso”.
+3. Detalle de Caso
+
+Vista detallada tipo CRM.
+
+Secciones:
+
+Información general
+cliente,
+juzgado,
+carátula,
+descripción,
+abogado responsable.
+Timeline
+
+Historial cronológico de movimientos.
+
+Documentos adjuntos
+
+Cards o lista de PDFs.
+
+Próximas audiencias
+
+Calendario o lista.
+
+Comentarios internos
+
+Caja tipo chat interno.
+
+4. Clientes
+
+Tabla moderna con:
+
+nombre,
+DNI/CUIT,
+teléfono,
+email,
+cantidad de causas,
+estado.
+
+Agregar:
+
+ficha de cliente,
+búsqueda,
+filtros.
+5. Agenda / Calendario
+
+Vista calendario moderna.
+
+Eventos:
+
+audiencias,
+reuniones,
+vencimientos,
+recordatorios.
+
+Debe verse elegante y profesional.
+
+6. Documentos
+
+Repositorio documental.
+
+Características:
+
+drag & drop visual,
+categorías,
+estado,
+fecha de carga,
+tamaño de archivo.
+
+Simular PDFs y documentos legales.
+
+7. Usuarios y Roles
+
+Tabla de usuarios.
+
+Roles:
+
+Administrador
+Abogado
+Secretario
+Recepción
+
+Mostrar:
+
+permisos,
+estado online,
+última conexión.
+8. Facturación
+
+Vista financiera simple.
+
+Mostrar:
+
+facturas emitidas,
+pendientes,
+cobradas,
+montos,
+gráficos de ingresos.
+9. Notificaciones
+
+Centro de actividad.
+
+Ejemplos:
+
+audiencia próxima,
+documento vencido,
+nuevo cliente,
+tarea asignada.
+UX/UI esperada
+
+La experiencia debe incluir:
+
+animaciones suaves,
+hover states,
+transiciones elegantes,
+skeleton loaders,
+modales,
+dropdowns,
+badges,
+tabs,
+tooltips.
+Responsive
+
+Debe funcionar correctamente en:
+
+desktop,
+notebook,
+tablet.
+
+No hace falta mobile-first extremo, pero sí adaptabilidad razonable.
+
+Datos mock
+
+Generar datos ficticios pero realistas:
+
+nombres,
+expedientes,
+juzgados,
+estados,
+abogados,
+documentos.
+
+NO usar lorem ipsum excesivo.
+
+Arquitectura sugerida
+Carpetas
+components/
+pages/
+layouts/
+services/
+hooks/
+data/
+utils/
+Componentes reutilizables
+
+Crear:
+
+tablas genéricas,
+cards KPI,
+badges de estado,
+modales,
+sidebar,
+header,
+gráficos reutilizables.
+Calidad esperada
+
+El resultado debe verse como:
+
+un producto SaaS real,
+listo para presentar,
+visualmente premium,
+coherente y consistente.
+
+La prioridad es:
+
+UX/UI profesional
+Navegación fluida
+Impacto visual
+Organización
+Escalabilidad
+
+La lógica backend puede ser simulada con mocks o fake APIs.
+
+Extras deseables
+
+Si hay tiempo, agregar:
+
+modo oscuro,
+login elegante,
+onboarding,
+métricas animadas,
+exportación PDF ficticia,
+drag & drop,
+activity feed en tiempo real simulado.
+Resultado esperado
+
+Entregar:
+
+proyecto React funcional,
+estructura profesional,
+componentes reutilizables,
+navegación completa,
+diseño moderno,
+demo visual lista para mostrar a potenciales clientes.

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  
+  --color-gold-50: #fefdf0;
+  --color-gold-100: #fefacd;
+  --color-gold-200: #fdf29c;
+  --color-gold-300: #fae260;
+  --color-gold-400: #f6cd2f;
+  --color-gold-500: #e2b112;
+  --color-gold-600: #c48c0b;
+  --color-gold-700: #9d650c;
+  --color-gold-800: #804f10;
+  --color-gold-900: #694011;
+  --color-gold-950: #3d2105;
+
+  --color-navy-50: #f0f5fa;
+  --color-navy-100: #deebf5;
+  --color-navy-200: #c2dbe0;
+  --color-navy-300: #99c2e0;
+  --color-navy-400: #6aa3c8;
+  --color-navy-500: #4985b0;
+  --color-navy-600: #376a94;
+  --color-navy-700: #2d5578;
+  --color-navy-800: #294964;
+  --color-navy-900: #1d3347;
+  --color-navy-950: #0b0f19;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0b0f19;
+  color: #f3f4f6;
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Custom class for beautiful active link backgrounds */
+.active-nav-link {
+  background: linear-gradient(90deg, rgba(226, 177, 18, 0.1) 0%, rgba(30, 41, 59, 0.4) 100%);
+  border-left: 3px solid #e2b112;
+}
+
+/* Glow effects */
+.glow-effect {
+  position: relative;
+}
+.glow-effect::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.glow-effect:hover::after {
+  opacity: 1;
+}
+
+/* Calendar grid height alignment */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: #1e293b;
+}
+
+/* Shimmer animation for skeletons */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.animate-shimmer::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 20%,
+    rgba(255, 255, 255, 0.1) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 2s infinite;
+  content: '';
+}
