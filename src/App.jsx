@@ -13,7 +13,7 @@ import Users from './pages/Users';
 import Billing from './pages/Billing';
 import Notifications from './pages/Notifications';
 import Reports from './pages/Reports';
-import Settings from './pages/Settings';
+import Trello from './pages/Trello';
 
 // Mock Data Source
 import { 
