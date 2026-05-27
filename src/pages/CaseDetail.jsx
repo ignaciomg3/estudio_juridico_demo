@@ -48,7 +48,7 @@ export default function CaseDetail({ caseId, cases, setCases, setView }) {
             ...c.comments,
             {
               id: Date.now(),
-              author: 'Dr. Carlos Muñoz',
+              author: 'Dr. Carlos Pérez',
               role: 'Socio Administrador',
               text: newComment,
               time: new Date().toISOString().replace('T', ' ').substring(0, 16)
@@ -149,10 +149,13 @@ export default function CaseDetail({ caseId, cases, setCases, setView }) {
 
   const getStatusClass = (status) => {
     switch (status) {
+      case 'Pendiente': return 'bg-rose-500/10 text-rose-450 border border-rose-500/20';
+      case 'Haciendo': return 'bg-amber-500/10 text-amber-450 border border-amber-500/20';
+      case 'finalizado': return 'bg-emerald-500/10 text-emerald-450 border border-emerald-500/20';
       case 'Urgente': return 'bg-rose-500/10 text-rose-450 border border-rose-500/20';
-      case 'Activo': return 'bg-emerald-500/10 text-emerald-450 border border-emerald-500/20';
+      case 'Activo': return 'bg-rose-500/10 text-rose-450 border border-rose-500/20';
       case 'En revisión': return 'bg-amber-500/10 text-amber-450 border border-amber-500/20';
-      case 'Cerrado': return 'bg-slate-500/10 text-slate-400 border border-slate-500/20';
+      case 'Cerrado': return 'bg-emerald-500/10 text-emerald-450 border border-emerald-500/20';
       default: return 'bg-slate-500/10 text-slate-400 border border-slate-500/20';
     }
   };

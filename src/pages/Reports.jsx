@@ -63,7 +63,7 @@ export default function Reports() {
           <div className="space-y-3">
             <div className="space-y-1 text-xs">
               <div className="flex justify-between font-semibold">
-                <span className="text-slate-300">Dr. Carlos Muñoz</span>
+                <span className="text-slate-300">Dr. Carlos Pérez</span>
                 <span className="text-slate-450">14 expedientes gestionados</span>
               </div>
               <div className="w-full bg-slate-800 h-2 rounded-full">

@@ -50,7 +50,7 @@ export default function Dashboard({ setView }) {
       >
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-gold-500/5 to-transparent rounded-full -mr-20 -mt-20 blur-3xl pointer-events-none"></div>
         <div className="space-y-1">
-          <h2 className="font-heading text-2xl font-bold text-white tracking-tight">Bienvenido al Portal, Dr. Muñoz</h2>
+          <h2 className="font-heading text-2xl font-bold text-white tracking-tight">Bienvenido al Portal, Dr. Pérez</h2>
           <p className="text-slate-400 text-sm">Resumen operativo para el control de causas y facturación del estudio.</p>
         </div>
         <div className="mt-4 md:mt-0 flex space-x-3">
@@ -267,7 +267,7 @@ export default function Dashboard({ setView }) {
           </div>
 
           <div className="bg-slate-950/60 p-3 rounded-lg border border-slate-850 mt-4 text-[10px] text-slate-400 text-center">
-            Muñoz Legal Suite &bull; Demo v1.0.0
+            Pérez Legal Suite &bull; Demo v1.0.0
           </div>
         </motion.div>
       </div>

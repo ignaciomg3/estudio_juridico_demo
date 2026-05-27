@@ -1,30 +1,32 @@
+import { useState } from 'react';
+import profileImg from '../assets/CarlosPerez.png';
 import { 
-  LayoutDashboard, 
   Briefcase, 
   Users, 
   Calendar, 
   FileText, 
   UserCheck, 
-  CreditCard, 
-  Bell, 
-  BarChart3, 
   Settings,
   Scale
 } from 'lucide-react';
+// Comentadas (no eliminadas): LayoutDashboard, CreditCard, Bell, BarChart3
+// import { LayoutDashboard, CreditCard, Bell, BarChart3 } from 'lucide-react';
 
 export default function Sidebar({ currentView, setView, notificationsCount }) {
   const menuItems = [
-    { id: 'dashboard', name: 'Dashboard', icon: LayoutDashboard },
+    /* { id: 'dashboard', name: 'Dashboard', icon: LayoutDashboard }, */
     { id: 'cases', name: 'Casos', icon: Briefcase },
     { id: 'clients', name: 'Clientes', icon: Users },
     { id: 'agenda', name: 'Agenda', icon: Calendar },
     { id: 'documents', name: 'Documentos', icon: FileText },
     { id: 'users', name: 'Usuarios', icon: UserCheck },
-    { id: 'billing', name: 'Facturación', icon: CreditCard },
-    { id: 'notifications', name: 'Notificaciones', icon: Bell, badge: notificationsCount },
-    { id: 'reports', name: 'Reportes', icon: BarChart3 },
+    /* { id: 'billing', name: 'Facturación', icon: CreditCard }, */
+    /* { id: 'notifications', name: 'Notificaciones', icon: Bell, badge: notificationsCount }, */
+    /* { id: 'reports', name: 'Reportes', icon: BarChart3 }, */
     { id: 'settings', name: 'Configuración', icon: Settings },
   ];
+
+  const [showImage, setShowImage] = useState(true);
 
   return (
     <aside className="w-64 bg-slate-900 border-r border-slate-800 flex flex-col h-screen sticky top-0">
@@ -34,7 +36,7 @@ export default function Sidebar({ currentView, setView, notificationsCount }) {
           <Scale className="h-6 w-6 text-slate-950 stroke-[2.5]" />
         </div>
         <div>
-          <h1 className="font-heading text-lg font-bold tracking-tight text-white leading-none">MUÑOZ</h1>
+          <h1 className="font-heading text-lg font-bold tracking-tight text-white leading-none">PÉREZ</h1>
           <span className="text-[10px] text-gold-400 font-semibold tracking-wider uppercase">Estudio Jurídico</span>
         </div>
       </div>
@@ -76,13 +78,22 @@ export default function Sidebar({ currentView, setView, notificationsCount }) {
       <div className="p-4 border-t border-slate-800 bg-slate-950/40">
         <div className="flex items-center space-x-3">
           <div className="relative">
-            <div className="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-gold-400 border border-gold-500/30">
-              CM
-            </div>
+            {showImage ? (
+              <img
+                src={profileImg}
+                alt="Foto Dr. Carlos Pérez"
+                onError={() => setShowImage(false)}
+                className="h-10 w-10 rounded-full object-cover ring-2 ring-gold-400 border-2 border-gold-500/40"
+              />
+            ) : (
+              <div className="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center font-bold text-gold-400 ring-2 ring-gold-400 border-2 border-gold-500/40">
+                CM
+              </div>
+            )}
             <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-slate-950"></span>
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-xs font-semibold text-white truncate">Dr. Carlos Muñoz</p>
+            <p className="text-xs font-semibold text-white truncate">Dr. Carlos Pérez</p>
             <p className="text-[10px] text-slate-500 truncate">Socio Administrador</p>
           </div>
         </div>

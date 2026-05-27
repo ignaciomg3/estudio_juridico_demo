@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
+import Inicio from './pages/Inicio';
 
 // Pages
 import Dashboard from './pages/Dashboard';
@@ -26,7 +28,9 @@ import {
 } from './data/mockData';
 
 export default function App() {
-  const [currentView, setView] = useState('dashboard');
+  const location = useLocation();
+  const isLandingPage = location.pathname === '/inicio';
+  const [currentView, setView] = useState('cases');
   const [selectedCaseId, setSelectedCaseId] = useState(null);
 
   // States maintained at the root for real-time reactivity across components
@@ -135,6 +139,10 @@ export default function App() {
   };
 
   const unreadCount = notifications.filter(n => !n.read).length;
+
+  if (isLandingPage) {
+    return <Inicio />;
+  }
 
   return (
     <div className="flex bg-slate-950 text-slate-100 min-h-screen">

@@ -6,7 +6,7 @@ export default function Header({ currentView, setView, notifications, markAllAsR
   const [showNotificationsDropdown, setShowNotificationsDropdown] = useState(false);
 
   const getBreadcrumb = () => {
-    const crumbs = [{ label: 'Muñoz', action: () => setView('dashboard') }];
+    const crumbs = [{ label: 'Pérez', action: () => setView('dashboard') }];
     
     switch (currentView) {
       case 'dashboard':
@@ -171,7 +171,7 @@ export default function Header({ currentView, setView, notifications, markAllAsR
           {showProfileDropdown && (
             <div className="absolute right-0 mt-2 w-48 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl overflow-hidden z-50 py-1">
               <div className="px-4 py-2 border-b border-slate-800 bg-slate-950/40">
-                <p className="text-xs font-semibold text-white">Dr. Carlos Muñoz</p>
+                <p className="text-xs font-semibold text-white">Dr. Carlos Pérez</p>
                 <p className="text-[10px] text-slate-500">Socio Administrador</p>
               </div>
               <button 

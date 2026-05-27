@@ -3,11 +3,11 @@ import { Save, Bell, Key, Scale } from 'lucide-react'; // removed unused icons
 
 export default function Settings() {
   const [profile, setProfile] = useState({
-    studioName: 'Estudio Jurídico Muñoz & Asociados',
+    studioName: 'Estudio Jurídico Pérez & Asociados',
     cuit: '30-71842099-2',
     address: 'Av. Corrientes 1420, Piso 10, CABA',
-    phone: '+54 11 4822-1000',
-    email: 'contacto@estudiomartinez.com',
+    phone: '+54 9 3513 33-2155',
+    email: 'contacto@estudioperez.com',
   });
 
   const [notifications, setNotifications] = useState({
