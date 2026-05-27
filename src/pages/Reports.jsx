@@ -1,5 +1,5 @@
-import React from 'react';
-import { BarChart3, FileDown, LineChart, PieChart, TrendingUp, CheckCircle, Clock } from 'lucide-react';
+// React import removed (not required with new JSX transform)
+import { BarChart3, FileDown, PieChart, TrendingUp, CheckCircle, Clock } from 'lucide-react';
 
 export default function Reports() {
   return (

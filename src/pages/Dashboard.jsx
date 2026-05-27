@@ -1,20 +1,18 @@
-import React from 'react';
+// React import removed (not required with new JSX transform)
 import { motion } from 'framer-motion';
 import { 
   Briefcase, 
   Calendar, 
   Users, 
   CreditCard, 
-  CheckCircle2, 
   TrendingUp, 
   ArrowUpRight,
   Activity,
-  FileText,
-  MessageSquare
+  FileText
 } from 'lucide-react';
 import { stats, casesByStatus, monthlyRevenueHistory, recentActivity } from '../data/mockData';
 
-export default function Dashboard({ setView, setSelectedCaseId }) {
+export default function Dashboard({ setView }) {
   // Anim variants
   const containerVariants = {
     hidden: { opacity: 0 },

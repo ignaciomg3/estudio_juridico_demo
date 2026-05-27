@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Plus, Mail, Phone, Shield, FileText, UserPlus, X } from 'lucide-react';
+import { Search, Mail, Phone, FileText, UserPlus, X } from 'lucide-react';
 
 export default function Clients({ clients, setClients, setView }) {
   const [searchTerm, setSearchTerm] = useState('');

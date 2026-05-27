@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar as CalendarIcon, Clock, MapPin, Plus, ChevronLeft, ChevronRight, X } from 'lucide-react';
-import { initialCalendarEvents } from '../data/mockData';
+// initialCalendarEvents import removed (not used)
 
 export default function Agenda({ events, setEvents }) {
   const [currentDate, setCurrentDate] = useState(new Date('2026-05-25'));

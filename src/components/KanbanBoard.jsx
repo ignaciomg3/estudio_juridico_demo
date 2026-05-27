@@ -1,5 +1,5 @@
 // KanbanBoard.jsx – reusable Kanban board component
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 // Column definitions – you can customize titles & status keys
 const columns = [

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { 
   ArrowLeft, 
   Calendar, 
@@ -7,11 +7,14 @@ import {
   MessageSquare, 
   Plus, 
   Send, 
-  User, 
   Paperclip,
-  Trash2,
   AlertCircle
 } from 'lucide-react';
+
+// Helper moved to module scope to avoid calling impure functions during render
+function pickRandomDoc(docNames) {
+  return docNames[Math.floor(Math.random() * docNames.length)];
+}
 
 export default function CaseDetail({ caseId, cases, setCases, setView }) {
   const activeCase = cases.find(c => c.id === caseId);
@@ -106,7 +109,7 @@ export default function CaseDetail({ caseId, cases, setCases, setView }) {
       'Escrito_Acompaña_Bono.pdf',
       'Acta_Poder_Comparecencia.pdf'
     ];
-    const randomDoc = docNames[Math.floor(Math.random() * docNames.length)];
+    const randomDoc = pickRandomDoc(docNames);
     
     // Check if already uploaded
     if (activeCase.documents.some(d => d.name === randomDoc)) {

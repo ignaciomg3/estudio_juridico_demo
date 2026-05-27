@@ -1,5 +1,5 @@
-import React from 'react';
-import { Bell, BellOff, CheckCircle2, ShieldAlert } from 'lucide-react';
+// React import removed (not required with new JSX transform)
+import { Bell, BellOff, ShieldAlert } from 'lucide-react';
 
 export default function Notifications({ notifications, markAllAsRead, setNotifications }) {
   const markAsRead = (id) => {

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Search, UserCheck, Shield, Mail, Key, Circle } from 'lucide-react';
+import { useState } from 'react';
+import { Search, Shield, Mail, Circle } from 'lucide-react';
 import { usersList } from '../data/mockData';
 
 export default function Users() {

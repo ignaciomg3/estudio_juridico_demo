@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Plus, CreditCard, DollarSign, Calendar, CheckCircle2, AlertCircle, X } from 'lucide-react';
-import { stats } from '../data/mockData';
+import { Search, Plus, DollarSign, CheckCircle2, AlertCircle, X } from 'lucide-react';
+// stats import removed (not used)
 
 export default function Billing({ invoices, setInvoices }) {
   const [searchTerm, setSearchTerm] = useState('');

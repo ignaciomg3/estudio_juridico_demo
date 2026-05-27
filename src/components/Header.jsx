@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Search, Bell, Moon, Sun, ChevronRight, LogOut, Settings, User } from 'lucide-react';
+import { Fragment, useState } from 'react';
+import { Search, Bell, ChevronRight, LogOut, Settings, User } from 'lucide-react';
 
 export default function Header({ currentView, setView, notifications, markAllAsRead }) {
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
@@ -57,19 +57,19 @@ export default function Header({ currentView, setView, notifications, markAllAsR
       {/* Breadcrumbs */}
       <div className="flex items-center space-x-2 text-sm text-slate-400">
         {crumbs.map((crumb, idx) => (
-          <React.Fragment key={idx}>
+          <Fragment key={idx}>
             {idx > 0 && <ChevronRight className="h-4 w-4 text-slate-600" />}
-            {crumb.action ? (
-              <button 
-                onClick={crumb.action} 
-                className="hover:text-gold-400 font-medium transition-colors"
-              >
-                {crumb.label}
-              </button>
-            ) : (
-              <span className="text-white font-semibold">{crumb.label}</span>
-            )}
-          </React.Fragment>
+                {crumb.action ? (
+                  <button 
+                    onClick={crumb.action} 
+                    className="hover:text-gold-400 font-medium transition-colors"
+                  >
+                    {crumb.label}
+                  </button>
+                ) : (
+                  <span className="text-white font-semibold">{crumb.label}</span>
+                )}
+              </Fragment>
         ))}
       </div>
 

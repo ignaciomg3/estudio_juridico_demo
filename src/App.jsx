@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 
@@ -13,7 +13,7 @@ import Users from './pages/Users';
 import Billing from './pages/Billing';
 import Notifications from './pages/Notifications';
 import Reports from './pages/Reports';
-import Trello from './pages/Trello';
+import Settings from './pages/Settings';
 
 // Mock Data Source
 import { 

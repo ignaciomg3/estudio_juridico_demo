@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Search, FileText, Upload, Folder, HardDrive, Trash2, Eye, FileDown } from 'lucide-react';
 
 export default function Documents({ documents, setDocuments }) {

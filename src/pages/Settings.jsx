@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Save, User, Shield, Bell, Key, Scale } from 'lucide-react';
+import { useState } from 'react';
+import { Save, Bell, Key, Scale } from 'lucide-react'; // removed unused icons
 
 export default function Settings() {
   const [profile, setProfile] = useState({

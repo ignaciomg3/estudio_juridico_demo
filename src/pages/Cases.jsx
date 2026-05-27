@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Plus, Filter, ArrowUpDown, ChevronLeft, ChevronRight, Eye, Trash2, X } from 'lucide-react';
+import { Search, Plus, Filter, ChevronLeft, ChevronRight, Eye, Trash2, X } from 'lucide-react';
 
 export default function Cases({ cases, setCases, setView, setSelectedCaseId }) {
   const [searchTerm, setSearchTerm] = useState('');
