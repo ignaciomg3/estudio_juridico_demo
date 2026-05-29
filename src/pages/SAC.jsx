@@ -1,41 +1,11 @@
-import { useEffect, useState } from 'react';
-import { Circle } from 'lucide-react';
+import { useState } from 'react';
+import sacImage from '../assets/SAC.png';
+import ConnectionStatus from '../components/ConnectionStatus';
 
 export default function SAC() {
-  const [status, setStatus] = useState('checking'); // 'online' | 'offline' | 'checking'
-  const [lastChecked, setLastChecked] = useState(null);
+  const [imageError, setImageError] = useState(false);
 
-  const SAC_URL = import.meta.env.VITE_SAC_API_URL || 'https://sac.example.com/health';
-
-  const checkConnection = async () => {
-    setStatus('checking');
-    try {
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 5000);
-      const res = await fetch(SAC_URL, { signal: controller.signal });
-      clearTimeout(timeout);
-
-      if (res.ok) {
-        setStatus('online');
-      } else {
-        setStatus('offline');
-      }
-    } catch (err) {
-      setStatus('offline');
-    } finally {
-      setLastChecked(new Date());
-    }
-  };
-
-  useEffect(() => {
-    checkConnection();
-    // optional: poll every 30s
-    const interval = setInterval(checkConnection, 30000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const colorClass = status === 'online' ? 'bg-emerald-500' : status === 'checking' ? 'bg-amber-500' : 'bg-rose-500';
-  const textLabel = status === 'online' ? 'Conectado' : status === 'checking' ? 'Comprobando...' : 'Desconectado';
+  const SAC_URL = import.meta.env.VITE_SAC_API_URL || 'https://www.justiciacordoba.gob.ar/justiciacordoba/extranet.aspx';
 
   return (
     <div className="p-6">
@@ -44,27 +14,23 @@ export default function SAC() {
           <h2 className="font-heading text-xl font-bold text-white">SAC</h2>
           <p className="text-slate-400 text-xs mt-0.5">Estado de conexión con la API del sistema SAC.</p>
         </div>
-        <div className="flex items-center space-x-3">
-          <button
-            onClick={checkConnection}
-            className="px-3 py-1 text-xs bg-slate-900 border border-slate-800 rounded-lg text-slate-200 hover:bg-slate-800"
-          >
-            Revisar ahora
-          </button>
-        </div>
       </div>
 
-      <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 flex items-center space-x-4 max-w-md">
-        <div className={`h-12 w-12 rounded-full flex items-center justify-center ${colorClass}`}>
-          <Circle className="h-6 w-6 text-slate-950" />
-        </div>
-        <div>
-          <div className="text-sm font-semibold text-white">{textLabel}</div>
-          <div className="text-xs text-slate-400 mt-1">Endpoint: <span className="text-slate-300 break-all">{SAC_URL}</span></div>
-          {lastChecked && (
-            <div className="text-xs text-slate-500 mt-1">Última comprobación: {lastChecked.toLocaleString()}</div>
-          )}
-        </div>
+      <ConnectionStatus endpoint={SAC_URL} statusLabel="Estado de conexión con la API del sistema SAC" />
+
+      <div className="mt-4 max-w-md">
+        {!imageError ? (
+          <img
+            src={sacImage}
+            alt="SAC"
+            onError={() => setImageError(true)}
+            className="w-full rounded-xl border border-slate-800 bg-slate-900 object-cover shadow-lg shadow-slate-950/30"
+          />
+        ) : (
+          <div className="rounded-xl border border-dashed border-slate-800 bg-slate-900 px-4 py-5 text-xs text-slate-500">
+            No se encontró <span className="text-slate-300">SAC.png</span> en <span className="text-slate-300">src/assets/</span>.
+          </div>
+        )}
       </div>
 
       <div className="mt-6 text-xs text-slate-500">

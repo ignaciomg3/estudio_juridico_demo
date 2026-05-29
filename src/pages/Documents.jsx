@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { Search, FileText, Upload, Folder, HardDrive, Trash2, Eye, FileDown } from 'lucide-react';
+import googleDriveImage from '../assets/GoogleDrive.png';
+import ConnectionStatus from '../components/ConnectionStatus';
 
 export default function Documents({ documents, setDocuments }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
   const [isDragging, setIsDragging] = useState(false);
+  const GOOGLE_DRIVE_URL = 'https://www.googledrive.com';
 
   const categories = ['All', 'Contratos', 'Escritos Judiciales', 'Notificaciones', 'Poderes', 'Resoluciones', 'Pruebas Documentales'];
 
@@ -79,38 +82,20 @@ export default function Documents({ documents, setDocuments }) {
         <p className="text-slate-400 text-xs mt-0.5">Gestione contratos, escritos, actas notariales y expedientes digitalizados.</p>
       </div>
 
-      {/* Stats row */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl flex items-center space-x-3.5 shadow-md">
-          <div className="p-3 bg-gold-500/10 text-gold-400 rounded-lg border border-gold-500/20">
-            <HardDrive className="h-5 w-5" />
-          </div>
-          <div>
-            <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Espacio Utilizado</p>
-            <p className="text-sm font-bold text-white mt-0.5">14.6 MB <span className="text-[10px] font-normal text-slate-550">de 50 GB</span></p>
-          </div>
-        </div>
-        
-        <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl flex items-center space-x-3.5 shadow-md">
-          <div className="p-3 bg-cyan-500/10 text-cyan-400 rounded-lg border border-cyan-500/20">
-            <FileText className="h-5 w-5" />
-          </div>
-          <div>
-            <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Total Archivos</p>
-            <p className="text-sm font-bold text-white mt-0.5">{documents.length} PDFs</p>
-          </div>
-        </div>
+      <ConnectionStatus
+        endpoint={GOOGLE_DRIVE_URL}
+        statusLabel="Estado de conexión con www.googledrive.com"
+      />
 
-        <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl flex items-center space-x-3.5 shadow-md">
-          <div className="p-3 bg-purple-500/10 text-purple-400 rounded-lg border border-purple-500/20">
-            <Folder className="h-5 w-5" />
-          </div>
-          <div>
-            <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Categorías Activas</p>
-            <p className="text-sm font-bold text-white mt-0.5">{categories.length - 1} folders</p>
-          </div>
-        </div>
+      <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 shadow-lg max-w-3xl">
+        <img
+          src={googleDriveImage}
+          alt="Google Drive"
+          className="w-full max-h-52 object-contain rounded-lg bg-slate-950/40 border border-slate-850"
+        />
       </div>
+
+      
 
       {/* Main Grid: Upload & list */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
