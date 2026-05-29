@@ -7,7 +7,8 @@ import {
   FileText, 
   UserCheck, 
   Settings,
-  Scale
+  Scale,
+  Server
 } from 'lucide-react';
 // Comentadas (no eliminadas): LayoutDashboard, CreditCard, Bell, BarChart3
 // import { LayoutDashboard, CreditCard, Bell, BarChart3 } from 'lucide-react';
@@ -18,6 +19,7 @@ export default function Sidebar({ currentView, setView, notificationsCount }) {
     { id: 'cases', name: 'Casos', icon: Briefcase },
     { id: 'clients', name: 'Clientes', icon: Users },
     { id: 'agenda', name: 'Agenda', icon: Calendar },
+    { id: 'sac', name: 'SAC', icon: Server },
     { id: 'documents', name: 'Documentos', icon: FileText },
     { id: 'users', name: 'Usuarios', icon: UserCheck },
     /* { id: 'billing', name: 'Facturación', icon: CreditCard }, */
@@ -46,21 +48,22 @@ export default function Sidebar({ currentView, setView, notificationsCount }) {
         {menuItems.map((item) => {
           const Icon = item.icon;
           const isActive = currentView === item.id || (item.id === 'cases' && currentView === 'case-detail');
-          
           return (
             <button
               key={item.id}
               onClick={() => setView(item.id)}
               className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 group ${
                 isActive 
-                  ? 'bg-gradient-to-r from-gold-500/10 to-slate-800/40 text-gold-400 border-l-4 border-gold-500 pl-3' 
-                  : 'text-slate-400 hover:text-white hover:bg-slate-800/50 pl-4'
+                  ? 'bg-gradient-to-r from-gold-500/10 to-slate-800/40 text-gold-400 border-l-4 border-gold-500' 
+                  : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
               }`}
             >
               <div className="flex items-center space-x-3">
-                <Icon className={`h-5 w-5 transition-transform duration-200 ${
-                  isActive ? 'text-gold-400' : 'text-slate-400 group-hover:text-white group-hover:scale-105'
-                }`} />
+                {Icon && (
+                  <Icon className={`h-5 w-5 transition-transform duration-200 ${
+                    isActive ? 'text-gold-400' : 'text-slate-400 group-hover:text-white group-hover:scale-105'
+                  }`} />
+                )}
                 <span>{item.name}</span>
               </div>
               

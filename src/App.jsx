@@ -16,6 +16,7 @@ import Billing from './pages/Billing';
 import Notifications from './pages/Notifications';
 import Reports from './pages/Reports';
 import Settings from './pages/Settings';
+import SAC from './pages/SAC';
 
 // Mock Data Source
 import { 
@@ -101,6 +102,10 @@ export default function App() {
             documents={documents} 
             setDocuments={setDocuments} 
           />
+        );
+      case 'sac':
+        return (
+          <SAC />
         );
       case 'users':
         return (
